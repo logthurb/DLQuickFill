@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Install My Script</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 50px auto;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: none;
+        }
+        .secondary-button {
+            background-color: #2196F3;
+        }
+        .hidden {
+            display: none;
+        }
+        .steps {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .browser-icon {
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Install My Script</h1>
+    
+    <!-- Initial view -->
+    <div id="initial-view">
+        <p>This tool will help you install our script with just a few clicks.</p>
+        <button class="button" onclick="detectBrowserAndProceed()">Start Installation</button>
+    </div>
+    
+    <!-- Step 1: Install Tampermonkey -->
+    <div id="install-tampermonkey" class="hidden">
+        <h2>Step 1: Install Tampermonkey</h2>
+        <p>You need to install the Tampermonkey extension first:</p>
+        
+        <div id="chrome-instructions" class="hidden">
+            <a href=[https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo"](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo") target="_blank" class="button">
+                <img src=[https://www.google.com/chrome/static/images/chrome-logo.svg"](https://www.google.com/chrome/static/images/chrome-logo.svg") class="browser-icon" alt="Chrome">
+                Install Tampermonkey for Chrome
+            </a>
+        </div>
+        
+        <div id="firefox-instructions" class="hidden">
+            <a href=[https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/"](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/") target="_blank" class="button">
+                <img src=[https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg"](https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg") class="browser-icon" alt="Firefox">
+                Install Tampermonkey for Firefox
+            </a>
+        </div>
+        
+        <div id="edge-instructions" class="hidden">
+            <a href=[https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd"](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd") target="_blank" class="button">
+                <img src=[https://edgestatic.azureedge.net/welcome/static/favicon.ico"](https://edgestatic.azureedge.net/welcome/static/favicon.ico") class="browser-icon" alt="Edge">
+                Install Tampermonkey for Edge
+            </a>
+        </div>
+        
+        <div id="safari-instructions" class="hidden">
+            <a href=[https://apps.apple.com/app/tampermonkey/id1482490089"](https://apps.apple.com/app/tampermonkey/id1482490089") target="_blank" class="button">
+                <img src=[https://www.apple.com/safari/images/overview/icon_safari__dsi4nmyuipi6_large.png"](https://www.apple.com/safari/images/overview/icon_safari__dsi4nmyuipi6_large.png") class="browser-icon" alt="Safari">
+                Install Tampermonkey for Safari
+            </a>
+        </div>
+        
+        <div id="other-browser" class="hidden">
+            <p>Please install Tampermonkey for your browser:</p>
+            <ul class="steps">
+                <li><a href=[https://www.tampermonkey.net/"](https://www.tampermonkey.net/") target="_blank">Visit Tampermonkey Website</a></li>
+                <li>Find and install the version for your browser</li>
+            </ul>
+        </div>
+        
+        <p style="margin-top: 30px;">After installing Tampermonkey, click below:</p>
+        <button class="button" onclick="showScriptInstall()">I've Installed Tampermonkey</button>
+    </div>
+    
+    <!-- Step 2: Install Script -->
+    <div id="install-script" class="hidden">
+        <h2>Step 2: Install the Script</h2>
+        <p>Now, click the button below to install the script:</p>
+        <a href=[https://raw.githubusercontent.com/yourusername/yourrepo/main/yourscript.user.js"](https://raw.githubusercontent.com/yourusername/yourrepo/main/yourscript.user.js") id="script-install-link" class="button">Install Script</a>
+        
+        <div class="steps" style="margin-top: 30px;">
+            <p>If you see a Tampermonkey installation page:</p>
+            <ol>
+                <li>Click the <strong>Install</strong> button</li>
+                <li>The script is now installed and ready to use!</li>
+            </ol>
+        </div>
+        
+        <p style="margin-top: 20px;">
+            <button class="button secondary-button" onclick="showTroubleshooting()">Having Problems?</button>
+        </p>
+    </div>
+    
+    <!-- Troubleshooting -->
+    <div id="troubleshooting" class="hidden">
+        <h2>Troubleshooting</h2>
+        <div class="steps">
+            <h3>Common Issues:</h3>
+            <ol>
+                <li><strong>Nothing happens when clicking "Install Script"</strong>
+                    <ul>
+                        <li>Make sure Tampermonkey is properly installed</li>
+                        <li>Try refreshing the page</li>
+                        <li>Try the manual installation method below</li>
+                    </ul>
+                </li>
+                <li><strong>Manual Installation:</strong>
+                    <ul>
+                        <li>Click the Tampermonkey icon in your browser toolbar</li>
+                        <li>Select "Create a new script"</li>
+                        <li>Delete all content in the editor</li>
+                        <li>Copy the script from <a href=[https://raw.githubusercontent.com/yourusername/yourrepo/main/yourscript.user.js"](https://raw.githubusercontent.com/yourusername/yourrepo/main/yourscript.user.js") target="_blank">this link</a></li>
+                        <li>Paste it into the Tampermonkey editor</li>
+                        <li>Press Ctrl+S or click File > Save</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>Still having issues? <a href="mailto:youremail@example.com">Contact support</a></p>
+        </div>
+        
+        <button class="button" onclick="showScriptInstall()">Back to Installation</button>
+    </div>
+
+    <script>
+        function detectBrowserAndProceed() {
+            document.getElementById('initial-view').classList.add('hidden');
+            document.getElementById('install-tampermonkey').classList.remove('hidden');
+            
+            const userAgent = navigator.userAgent;
+            
+            if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Edg") === -1) {
+                document.getElementById('chrome-instructions').classList.remove('hidden');
+            } else if (userAgent.indexOf("Firefox") > -1) {
+                document.getElementById('firefox-instructions').classList.remove('hidden');
+            } else if (userAgent.indexOf("Edg") > -1) {
+                document.getElementById('edge-instructions').classList.remove('hidden');
+            } else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) {
+                document.getElementById('safari-instructions').classList.remove('hidden');
+            } else {
+                document.getElementById('other-browser').classList.remove('hidden');
+            }
+        }
+        
+        function showScriptInstall() {
+            document.getElementById('install-tampermonkey').classList.add('hidden');
+            document.getElementById('troubleshooting').classList.add('hidden');
+            document.getElementById('install-script').classList.remove('hidden');
+        }
+        
+        function showTroubleshooting() {
+            document.getElementById('install-script').classList.add('hidden');
+            document.getElementById('troubleshooting').classList.remove('hidden');
+        }
+        
+        // Check if Tampermonkey is already installed
+        window.addEventListener('load', function() {
+            // This is a simple check that might work in some cases
+            if (typeof window.Tampermonkey !== 'undefined' || 
+                document.querySelector('script[src*="tampermonkey"]') !== null) {
+                // Skip to script installation
+                detectBrowserAndProceed();
+                showScriptInstall();
+            }
+        });
+    </script>
+</body>
+</html>
